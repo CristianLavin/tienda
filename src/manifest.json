@@ -1,0 +1,14 @@
+{
+    "icons": [
+        {
+            "src": "assets/icon/res/mipmap-xhdpi/GreenGarden.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "assets/icon/play_store_512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}

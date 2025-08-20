@@ -1,0 +1,47 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="success">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>admin</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-thumbnail slot="start">
+        <img src="https://cdn.shopify.com/s/files/1/0042/5374/5198/products/IMG_0259_1800x1800.jpg?v=1642603671">
+      </ion-thumbnail>
+      <ion-label>
+        <ion-button expand="full" color="success" (click)="agregarproducto()">Agregar Producto<ion-icon
+            name="add-outline"></ion-icon></ion-button>
+        <ion-button expand="full" color="success" (click)="eliminarproducto()">Eliminar Producto<ion-icon
+            name="close-outline"></ion-icon></ion-button>
+        <ion-button expand="full" color="success" (click)="listarproducto()">Listar Productos<ion-icon
+            name="build-outline"></ion-icon></ion-button>
+        <ion-button expand="full" color="success" (click)="editarproducto()">Editar Producto<ion-icon
+            name="create-outline"></ion-icon></ion-button>
+      </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-thumbnail slot="start">
+        <img
+          src="https://static.vecteezy.com/system/resources/previews/008/302/516/non_2x/eps10-green-user-icon-or-logo-in-simple-flat-trendy-modern-style-isolated-on-white-background-free-vector.jpg">
+      </ion-thumbnail>
+      <ion-label>
+        <ion-button expand="full" color="success" (click)="agregarusuario()">Agregar Usuario<ion-icon
+          name="add-outline"></ion-icon></ion-button>
+        <ion-button expand="full" color="success" (click)="eliminarusuario()">Eliminar Usuario<ion-icon
+            name="close-outline"></ion-icon></ion-button>
+        <ion-button expand="full" color="success" (click)="listarusuario()">Listar Usuarios<ion-icon
+            name="build-outline"></ion-icon></ion-button>
+        <ion-button expand="full" color="success" (click)="editarusuario()">Editar Usuario<ion-icon
+            name="create-outline"></ion-icon></ion-button>
+      </ion-label>
+    </ion-item>
+
+    <ion-button expand="full" color="success" (click)="home()">Aceptar</ion-button>
+  </ion-list>
+</ion-content>

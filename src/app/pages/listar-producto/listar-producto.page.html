@@ -1,0 +1,21 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="success">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/admin"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Listar Productos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let producto of productos">
+      Nombre: {{ producto.nombre }}<br>
+      Precio: {{ producto.precio }}<br>
+      Stock: {{ producto.stock }}<br>
+      Tipo: {{ producto.tipo }}<br>
+      Descripcion: {{ producto.descripcion }}<br>
+      imagen_url: {{ producto.imagen_url }}
+    </ion-item>
+  </ion-list>
+</ion-content>

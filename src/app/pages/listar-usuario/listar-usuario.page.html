@@ -1,0 +1,18 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="success">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/admin"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Listar Usuarios</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let usuario of usuarios">
+      Nombre: {{ usuario.nombre }}<br>
+      Correo: {{ usuario.correo }}<br>
+      Contraseña: {{ usuario.contrasena }}
+    </ion-item>
+  </ion-list>
+</ion-content>

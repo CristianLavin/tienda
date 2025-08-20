@@ -1,0 +1,34 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        
+        {
+            "name": "Launch Chrome against localhost, with sourcemaps",
+            "type": "chrome",
+            "request": "launch",
+            "url": "http://localhost:8100",
+            "sourceMaps": true,
+            "webRoot": "${workspaceRoot}"
+        },
+        {
+            "name": "Attach to Chrome, with sourcemaps",
+            "type": "chrome",
+            "request": "attach",
+            "port": 8100,
+            "sourceMaps": true,
+            "webRoot": "${workspaceRoot}",
+            "url":"http://localhost:8100/",
+            "sourceMapPathOverrides": {
+                "webpack:///helper.ts": "${webRoot}/src/directory1/helper.ts",
+    
+                "webpack:///link.ts": "${webRoot}/src/directory2/link.ts",
+    
+                "webpack:///my-page.ts" : "${webRoot}/src/pages/report-fault/my-page.ts",
+                "webpack:///tabs.ts" : "${webRoot}/src/pages/tabs/tabs.ts",
+    
+                "webpack:///app.component.ts": "${webRoot}/src/app/app.component.ts",
+                "webpack:///app.module.ts": "${webRoot}/src/app/app.module.ts"
+            }
+        }
+    ]
+    }

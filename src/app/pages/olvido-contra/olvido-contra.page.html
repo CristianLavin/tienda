@@ -1,0 +1,39 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="success">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/login"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Recuperación de contraseña</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="fondologin">
+  <div class="container">
+    <h1 class="heading">¿Contraseña olvidada? 😥<br><br></h1>
+    <br>
+    <p class="para">Ingrese el correo electrónico para restablecer</p>
+    <form [formGroup]="formulario" (ngSubmit)="submitForm()">
+      <ion-item lines="none" class="ion-item">
+        <fieldset class="input-item">
+          <legend>correo electrónico</legend>
+          <ion-input formControlName="correo" class="form-login" type="email"
+            placeholder="correo@domain.com"></ion-input>
+        </fieldset>
+      </ion-item>
+      <div *ngIf="formulario?.get('correo')?.hasError('required') && formulario?.get('correo')?.touched"
+        style="color: red;">
+        El correo electrónico es obligatorio.
+      </div>
+      <div *ngIf="formulario?.get('correo')?.hasError('email') && formulario?.get('correo')?.touched"
+        style="color: red;">
+        Ingresa una dirección de correo electrónico válida.
+      </div>
+
+      <p class="signup-text">Recordar Contraseña&nbsp;<a (click)="login()">¿Iniciar sesión?</a></p>
+      <ion-button *ngIf="formulario" (click)="resetPassword(formulario?.get('correo')?.value)" class="login-button" expand="block" color="success">Restablecer la contraseña</ion-button>
+      <div *ngIf="successMessage" class="alert alert-success">{{ successMessage }}</div>
+      <div *ngIf="errorMessage" class="alert alert-danger" style="color: red;">{{ errorMessage }}</div>
+
+    </form>
+  </div>
+</ion-content>

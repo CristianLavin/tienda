@@ -1,0 +1,8 @@
+{
+  "name": "Green Garden",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}

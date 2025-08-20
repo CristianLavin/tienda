@@ -1,0 +1,19 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="success">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/admin"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Eliminar Producto</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label position="stacked">Nombre de Producto</ion-label>
+      <ion-input type="text" [(ngModel)]="nombre"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <ion-button color="success" expand="block" (click)="eliminarProducto()">Eliminar</ion-button>
+
+</ion-content>

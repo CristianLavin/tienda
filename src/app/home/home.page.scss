@@ -1,0 +1,64 @@
+ion-content {
+  --background: transparent url('../imgs/fondo.jpg') no-repeat center center;
+  background-size: auto;
+}
+section {
+  display: table;
+}
+
+.example-label {
+  display: table-cell;
+  font-size: 14px;
+  margin-left: 8px;
+  min-width: 120px;
+}
+
+.example-button-row {
+  display: table-cell;
+  max-width: 600px;
+}
+
+.example-button-row .mat-mdc-button-base {
+  margin: 8px 8px 8px 0;
+}
+
+.example-flex-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.example-button-container {
+  display: flex;
+  justify-content: center;
+  width: 120px;
+}
+
+.home {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.plant-images {
+  display: flex;
+  animation: scrollImages 20s linear infinite;
+}
+
+.plant-image {
+  width: 50%;
+  height: auto;
+  margin-right: 10px;
+  transform: scale(0.8);
+  transition: transform 0.5s ease-in-out;
+}
+
+@keyframes scrollImages {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}

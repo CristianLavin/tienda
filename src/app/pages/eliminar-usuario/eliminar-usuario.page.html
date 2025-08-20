@@ -1,0 +1,23 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="success">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/admin"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Eliminar Usuario</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label position="stacked">Correo del Usuario</ion-label>
+      <ion-input type="text" [(ngModel)]="correo"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Contraseña del Usuario</ion-label>
+      <ion-input type="password" [(ngModel)]="password"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <ion-button color="success" expand="block" (click)="eliminarUsuario()">Eliminar</ion-button>
+
+</ion-content>

@@ -1,0 +1,37 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="success">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/admin"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Editar Producto</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let producto of productos">
+      <form (ngSubmit)="editarProducto(producto)">
+        <h3>{{ producto.nombre }}</h3>
+        <label>Nombre:</label>
+        <input [(ngModel)]="producto.nombre" name="nombre" required><br>
+
+        <label>Stock:</label>
+        <input [(ngModel)]="producto.stock" name="stock" required><br>
+
+        <label>Tipo:</label>
+        <input [(ngModel)]="producto.tipo" name="tipo" required><br>
+
+        <label>Descripción:</label>
+        <textarea [(ngModel)]="producto.descripcion" name="descripcion" required></textarea><br>
+
+        <label>Imagen URL:</label>
+        <input [(ngModel)]="producto.imagen_url" name="imagen_url" required><br>
+
+        <label>Precio:</label>
+        <input [(ngModel)]="producto.precio" name="precio" required>
+        <ion-button color="success" type="submit">Guardar cambios</ion-button>
+      </form>
+    </ion-item>
+    
+  </ion-list>
+</ion-content>

@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="success">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Historial de Pedidos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngIf="pedidos | async as pedidosData">
+    <ion-item *ngFor="let pedido of obtenerPedidosUnicos(pedidosData)">
+      <ion-thumbnail slot="start">
+        <img [src]="pedido.productos['0'].imageUrl" alt="{{ pedido.productos['0'].nombre }}">
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{ pedido.productos['0'].nombre }}</h2>
+        <p>Cantidad: {{ pedido.productos['0'].cantidad }}</p>
+        <p>Precio: {{ pedido.productos['0'].precio }}</p>
+        <p>Fecha: {{ pedido.productos['0'].fecha.toDate() | date:'medium' }}</p>
+        <ion-label>Total: {{ calcularTotal(pedido.productos['0'].cantidad, pedido.productos['0'].precio) |
+          currency:'':'symbol':'1.0-0' }}</ion-label>
+      </ion-label>
+    </ion-item>
+
+
+
+    <ion-button expand="default" color="success" (click)="eliminarPedido()" class="buton">Eliminar Historial<ion-icon
+        name="trash"></ion-icon></ion-button>
+    <ion-button expand="full" color="success" (click)="home()">Aceptar</ion-button>
+
+  </ion-list>
+</ion-content>

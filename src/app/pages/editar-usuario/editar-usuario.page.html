@@ -1,0 +1,29 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="success">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/admin"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Editar Usuario</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let usuario of usuarios">
+      <form (ngSubmit)="editarUsuario(usuario)">
+        <h3>{{ usuario.nombre }}</h3>
+        <label>Nombre:</label>
+        <input [(ngModel)]="usuario.nombre" name="nombre" required><br>
+
+        <label>Correo:</label>
+        <input [(ngModel)]="usuario.correo" name="stock" required><br>
+
+        <label>Contraseña:</label>
+        <input [(ngModel)]="usuario.contrasena" name="contrasena" required>
+
+        <ion-button color="success" type="submit">Guardar cambios</ion-button>
+      </form>
+    </ion-item>
+
+  </ion-list>
+</ion-content>

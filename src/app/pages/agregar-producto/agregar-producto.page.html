@@ -1,0 +1,40 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="success">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/admin"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Agregar Producto</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label position="stacked">Nombre del Producto</ion-label>
+      <ion-input [(ngModel)]="nombre" placeholder="Nombre"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Precio</ion-label>
+      <ion-input [(ngModel)]="precio" type="number" placeholder="Precio"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Imagen</ion-label>
+      <ion-input [(ngModel)]="imagen" placeholder="URL de la imagen"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Descripcion</ion-label>
+      <ion-input [(ngModel)]="descripcion" placeholder="Descripcion"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Stock</ion-label>
+      <ion-input [(ngModel)]="stock" type="number" placeholder="Stock"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Tipo de Producto</ion-label>
+      <ion-input [(ngModel)]="tipo" placeholder="Tipo"></ion-input>
+    </ion-item>
+  </ion-list>
+  <ion-button color="success" expand="block"
+    (click)="agregarProducto()">Agregar
+    Producto</ion-button>
+</ion-content>

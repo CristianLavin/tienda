@@ -1,0 +1,51 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="success">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Inicio de sesión</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="fondologin">
+  <div class="container">
+    <h1 class="heading">👋 Bienvenido <br><br></h1>
+    <p color="body" class="para">¡Inicia sesión para continuar!</p>
+    <form [formGroup]="formulario" (ngSubmit)="submitForm()">
+      <ion-item lines="none" class="ion-item">
+        <fieldset class="input-item">
+          <legend>correo electrónico</legend>
+          <ion-input formControlName="correo" class="form-login" type="email" placeholder="correo@domain.com" #email>
+          </ion-input>
+        </fieldset>
+      </ion-item>
+      <br>
+      <div *ngIf="formulario?.get('correo')?.hasError('required') && formulario?.get('correo')?.touched"
+        style="color: red;">
+        El correo electrónico es obligatorio.
+      </div>
+      <div *ngIf="formulario?.get('correo')?.hasError('email') && formulario?.get('correo')?.touched"
+        style="color: red;">
+        Ingresa una dirección de correo electrónico válida.
+      </div>
+      <ion-item lines="none" class="ion-item">
+        <fieldset class="input-item">
+          <legend>Contraseña</legend>
+          <ion-input formControlName="password" type="password" placeholder="********" #password></ion-input>
+        </fieldset>
+      </ion-item>
+      <div *ngIf="formulario.get('password')?.hasError('required') && formulario.get('password')?.touched"
+        style="color: red;">
+        La contraseña es obligatoria.
+      </div>
+
+      <p color="warning" class="forget-text"><a (click)="olvidocontra()">¿Olvidaste tu contraseña?</a></p>
+      <p class="signup-text">¿Eres un nuevo usuario?<a (click)="registro()">Inscríbete</a></p>
+      <ion-button class="login-button" type="submit" [disabled]="formulario.invalid" expand="block" color="success"
+        (click)="logIn((email.value ?? '').toString(), (password.value ?? '').toString())">Inicia sesión</ion-button>
+      
+
+
+    </form>
+  </div>
+</ion-content>

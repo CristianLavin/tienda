@@ -1,0 +1,218 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="success">
+    <ion-buttons slot="start">
+      <ion-menu-button auto-hide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button (click)="pedido()">
+        <ion-icon name="clipboard-sharp"></ion-icon>
+      </ion-button>
+      <ion-button (click)="carrito()">
+        <ion-icon name="cart"></ion-icon>
+      </ion-button>
+      <ion-button (click)="perfil()">
+        <ion-icon name="person"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large"></ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div class="container mt-5">
+    <ion-grid class="ion-justify-content-center">
+      <ion-row class="ion-align-items-stretch ion-md-cols-2 ion-lg-cols-3 ion-xl-cols-4">
+        <ion-col size="12" size-md="6" size-lg="4" size-xl="3" class="ion-margin-bottom">
+          <ion-card class="ion-text-center">
+            <!-- Product image-->
+            <ion-card-content>
+              <div class="image-container">
+                <img src="{{ Imagen2 }}" alt="..." style="width: 50%;" />
+              </div>
+              <ion-card-title class="ion-text-center ion-text-wrap ion-font-weight-bold">{{ Nombre2 }}</ion-card-title>
+              <ion-card-subtitle class="ion-text-center">{{ Precio2 | currency:'':'symbol':'1.0-0'
+                }}</ion-card-subtitle>
+              <ion-card-subtitle class="ion-text-center">Stock: {{ Stock2 }}</ion-card-subtitle>
+            </ion-card-content>
+            <!-- Product actions-->
+            <div class="ion-text-center ion-no-padding ion-margin-top">
+              <ion-button expand="full" color="success" (click)="detalle()">Ver Producto</ion-button>
+            </div>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  <div class="container mt-5">
+    <ion-grid class="ion-justify-content-center">
+      <ion-row class="ion-align-items-stretch ion-md-cols-2 ion-lg-cols-3 ion-xl-cols-4">
+        <ion-col size="12" size-md="6" size-lg="4" size-xl="3" class="ion-margin-bottom">
+          <ion-card class="ion-text-center">
+            <!-- Product image-->
+            <ion-card-content>
+              <div class="image-container">
+                <img src="{{ Imagen3 }}" alt="..." style="width: 50%;" />
+              </div>
+              <ion-card-title class="ion-text-center ion-text-wrap ion-font-weight-bold">{{ Nombre3 }}</ion-card-title>
+              <ion-card-subtitle class="ion-text-center">{{ Precio3 | currency:'':'symbol':'1.0-0'
+                }}</ion-card-subtitle>
+              <ion-card-subtitle class="ion-text-center">Stock: {{ Stock3 }}</ion-card-subtitle>
+            </ion-card-content>
+            <!-- Product actions-->
+            <div class="ion-text-center ion-no-padding ion-margin-top">
+              <ion-button expand="full" color="success" (click)="detalle1()">Ver Producto</ion-button>
+            </div>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  <div class="container mt-5">
+    <ion-grid class="ion-justify-content-center">
+      <ion-row class="ion-align-items-stretch ion-md-cols-2 ion-lg-cols-3 ion-xl-cols-4">
+        <ion-col size="12" size-md="6" size-lg="4" size-xl="3" class="ion-margin-bottom">
+          <ion-card class="ion-text-center">
+            <!-- Product image-->
+            <ion-card-content>
+              <div class="image-container">
+                <img src="{{ Imagen4}}" alt="..." style="width: 50%;" />
+              </div>
+              <ion-card-title class="ion-text-center ion-text-wrap ion-font-weight-bold">{{ Nombre4 }}</ion-card-title>
+              <ion-card-subtitle class="ion-text-center">{{ Precio4 | currency:'':'symbol':'1.0-0'
+                }}</ion-card-subtitle>
+              <ion-card-subtitle class="ion-text-center">Stock: {{ Stock4 }}</ion-card-subtitle>
+            </ion-card-content>
+            <!-- Product actions-->
+            <div class="ion-text-center ion-no-padding ion-margin-top">
+              <ion-button expand="full" color="success" (click)="detalle2()">Ver Producto</ion-button>
+            </div>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  <div class="container mt-5">
+    <ion-grid class="ion-justify-content-center">
+      <ion-row class="ion-align-items-stretch ion-md-cols-2 ion-lg-cols-3 ion-xl-cols-4">
+        <ion-col size="12" size-md="6" size-lg="4" size-xl="3" class="ion-margin-bottom">
+          <ion-card class="ion-text-center">
+            <!-- Product image-->
+            <ion-card-content>
+              <div class="image-container">
+                <img src="{{ Imagen5 }}" alt="..." style="width: 50%;" />
+              </div>
+              <ion-card-title class="ion-text-center ion-text-wrap ion-font-weight-bold">{{ Nombre5 }}</ion-card-title>
+              <ion-card-subtitle class="ion-text-center">{{ Precio5 | currency:'':'symbol':'1.0-0'
+                }}</ion-card-subtitle>
+              <ion-card-subtitle class="ion-text-center">Stock: {{ Stock5 }}</ion-card-subtitle>
+            </ion-card-content>
+            <!-- Product actions-->
+            <div class="ion-text-center ion-no-padding ion-margin-top">
+              <ion-button expand="full" color="success" (click)="detalle3()">Ver Producto</ion-button>
+            </div>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  <div class="container mt-5">
+    <ion-grid class="ion-justify-content-center">
+      <ion-row class="ion-align-items-stretch ion-md-cols-2 ion-lg-cols-3 ion-xl-cols-4">
+        <ion-col size="12" size-md="6" size-lg="4" size-xl="3" class="ion-margin-bottom">
+          <ion-card class="ion-text-center">
+            <!-- Product image-->
+            <ion-card-content>
+              <div class="image-container">
+                <img src="{{ Imagen6 }}" alt="..." style="width: 50%;" />
+              </div>
+              <ion-card-title class="ion-text-center ion-text-wrap ion-font-weight-bold">{{ Nombre6 }}</ion-card-title>
+              <ion-card-subtitle class="ion-text-center">{{ Precio6 | currency:'':'symbol':'1.0-0'
+                }}</ion-card-subtitle>
+              <ion-card-subtitle class="ion-text-center">Stock: {{ Stock6 }}</ion-card-subtitle>
+            </ion-card-content>
+            <!-- Product actions-->
+            <div class="ion-text-center ion-no-padding ion-margin-top">
+              <ion-button expand="full" color="success" (click)="detalle4()">Ver Producto</ion-button>
+            </div>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  <div class="container mt-5">
+    <ion-grid class="ion-justify-content-center">
+      <ion-row class="ion-align-items-stretch ion-md-cols-2 ion-lg-cols-3 ion-xl-cols-4">
+        <ion-col size="12" size-md="6" size-lg="4" size-xl="3" class="ion-margin-bottom">
+          <ion-card class="ion-text-center">
+            <!-- Product image-->
+            <ion-card-content>
+              <div class="image-container">
+                <img src="{{ Imagen7 }}" alt="..." style="width: 50%;" />
+              </div>
+              <ion-card-title class="ion-text-center ion-text-wrap ion-font-weight-bold">{{ Nombre7 }}</ion-card-title>
+              <ion-card-subtitle class="ion-text-center">{{ Precio7 | currency:'':'symbol':'1.0-0'
+                }}</ion-card-subtitle>
+              <ion-card-subtitle class="ion-text-center">Stock: {{ Stock7 }}</ion-card-subtitle>
+            </ion-card-content>
+            <!-- Product actions-->
+            <div class="ion-text-center ion-no-padding ion-margin-top">
+              <ion-button expand="full" color="success" (click)="detalle5()">Ver Producto</ion-button>
+            </div>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  <div class="container mt-5">
+    <ion-grid class="ion-justify-content-center">
+      <ion-row class="ion-align-items-stretch ion-md-cols-2 ion-lg-cols-3 ion-xl-cols-4">
+        <ion-col size="12" size-md="6" size-lg="4" size-xl="3" class="ion-margin-bottom">
+          <ion-card class="ion-text-center">
+            <!-- Product image-->
+            <ion-card-content>
+              <div class="image-container">
+                <img src="{{ Imagen }}" alt="..." style="width: 50%;" />
+              </div>
+              <ion-card-title class="ion-text-center ion-text-wrap ion-font-weight-bold">{{ Nombre }}</ion-card-title>
+              <ion-card-subtitle class="ion-text-center">{{ Precio | currency:'':'symbol':'1.0-0' }}</ion-card-subtitle>
+              <ion-card-subtitle class="ion-text-center">Stock: {{ Stock }}</ion-card-subtitle>
+            </ion-card-content>
+            <!-- Product actions-->
+            <div class="ion-text-center ion-no-padding ion-margin-top">
+              <ion-button expand="full" color="success" (click)="detalle6()">Ver Producto</ion-button>
+            </div>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  <div class="container mt-5">
+    <ion-grid class="ion-justify-content-center">
+      <ion-row class="ion-align-items-stretch ion-md-cols-2 ion-lg-cols-3 ion-xl-cols-4">
+        <ion-col size="12" size-md="6" size-lg="4" size-xl="3" class="ion-margin-bottom">
+          <ion-card class="ion-text-center">
+            <!-- Product image-->
+            <ion-card-content>
+              <div class="image-container">
+                <img src="{{ Imagen8 }}" alt="..." style="width: 50%;" />
+              </div>
+              <ion-card-title class="ion-text-center ion-text-wrap ion-font-weight-bold">{{ Nombre8 }}</ion-card-title>
+              <ion-card-subtitle class="ion-text-center">{{ Precio8 | currency:'':'symbol':'1.0-0'
+                }}</ion-card-subtitle>
+              <ion-card-subtitle class="ion-text-center">Stock: {{ Stock8 }}</ion-card-subtitle>
+            </ion-card-content>
+            <!-- Product actions-->
+            <div class="ion-text-center ion-no-padding ion-margin-top">
+              <ion-button expand="full" color="success" (click)="detalle7()">Ver Producto</ion-button>
+            </div>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>

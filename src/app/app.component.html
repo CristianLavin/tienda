@@ -1,0 +1,43 @@
+<ion-app>
+  <ion-split-pane contentId="main-content">
+    <ion-menu contentId="main-content">
+      <ion-header>
+        <ion-toolbar>
+          <h1 class="heading">🌱 Bienvenido 🌱</h1>
+          <p class="para">Ingresa a tu cuenta</p>
+          <p class="para">Podrás personalizar tu experiencia</p>
+          <ion-button color="success" (click)="login()" expand="block"> Ingresar</ion-button>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+        <ion-list>
+          <ion-item-group>
+            <ion-item-divider>
+              <ion-label>Categorías</ion-label>
+            </ion-item-divider>
+            <ion-item (click)="redirectTo('Inicio')">
+              <ion-label>Inicio</ion-label><ion-icon name="home-outline"></ion-icon>
+            </ion-item>
+            <ion-item (click)="toggleSubcategory('Productos')">
+              <ion-label>Productos</ion-label>
+              <ion-icon slot="end" [name]="isSubcategoryOpen('Productos') ? 'chevron-up' : 'chevron-down'"></ion-icon>
+            </ion-item>
+            <ion-list *ngIf="isSubcategoryOpen('Productos')">
+              <ion-item (click)="redirectTo('Plantas')">
+                <ion-label>Plantas</ion-label><ion-icon name="leaf-outline"></ion-icon>
+              </ion-item>
+              <ion-item (click)="redirectTo('Maceteros')">
+                <ion-label>Maceteros</ion-label><ion-icon name="color-fill-outline"></ion-icon>
+              </ion-item>
+              <ion-item *ngIf="obtenerFlag2()" (click)="redirectTo('Admin')">
+                <ion-label>Administracion</ion-label><ion-icon name="build-outline"></ion-icon>
+              </ion-item>
+            </ion-list>
+          </ion-item-group>
+        </ion-list>
+      </ion-content>
+      <ion-button *ngIf="obtenerFlag()" color="success" (click)="logOut()" expand="block">Desloguear</ion-button>
+    </ion-menu>
+    <ion-router-outlet id="main-content"></ion-router-outlet>
+  </ion-split-pane>
+</ion-app>

@@ -1,0 +1,16 @@
+<ion-card>
+  <ion-card-header>
+    Clima y Hora Actual
+  </ion-card-header>
+  <ion-card-content>
+    <div *ngIf="clima">
+      <h2>{{ clima.name| uppercase }}</h2>
+      <p>{{ clima.weather[0].description| uppercase }}</p>
+      <p>Temperatura: {{ clima.main.temp }}°C</p>
+      <p>Hora Actual: {{ horaActual }}</p>
+    </div>
+    <div *ngIf="!clima">
+      <p>Cargando datos de clima...</p>
+    </div>
+  </ion-card-content>
+</ion-card>

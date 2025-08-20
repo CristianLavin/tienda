@@ -1,0 +1,13 @@
+{
+    "appId": "greengarden",
+    "appName": "greengarden",
+    "webDir": "www",
+    "bundledWebRuntime": false,
+    "plugins": {
+      "Camera": {
+        "iosUsageDescription": "Permitir acceso a la cámara",
+        "androidPermission": "android.permission.CAMERA"
+      }
+    }
+  }
+  

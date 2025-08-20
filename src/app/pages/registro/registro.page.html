@@ -1,0 +1,94 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="success">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/login"></ion-back-button>
+    </ion-buttons>
+    <ion-title>registro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="fondologin">
+  <div class="container">
+    <h1 class="heading">Crear una cuenta 😄<br><br></h1>
+    <p class="para">¡Regístrate para empezar!🏵️</p>
+
+    <form *ngIf="formularioR" [formGroup]="formularioR" (ngSubmit)="submitForm()">
+      <ion-item lines="none" class="ion-item">
+        <fieldset class="input-item">
+          <legend>Nombre</legend>
+          <ion-input formControlName="nombre" type="text" placeholder="John Doe"></ion-input>
+        </fieldset>
+      </ion-item>
+      <div *ngIf="formularioR.get('nombre')?.hasError('required') && formularioR.get('nombre')?.touched"
+        style="color: red;">
+        El nombre es obligatorio.
+      </div>
+      <div *ngIf="formularioR.get('nombre')?.hasError('minlength') && formularioR.get('nombre')?.touched"
+        style="color: red;">
+        El nombre debe tener al menos 3 caracteres.
+      </div>
+
+      <ion-item lines="none" class="ion-item">
+        <fieldset class="input-item">
+          <legend>Correo electrónico</legend>
+          <ion-input formControlName="correo" type="email" placeholder="john@doe.com" #email></ion-input>
+        </fieldset>
+      </ion-item>
+      <div *ngIf="formularioR.get('correo')?.hasError('required') && formularioR.get('correo')?.touched"
+        style="color: red;">
+        El correo electrónico es obligatorio.
+      </div>
+      <div *ngIf="formularioR.get('correo')?.hasError('email') && formularioR.get('correo')?.touched"
+        style="color: red;">
+        Ingresa una dirección de correo electrónico válida.
+      </div>
+      <ion-item lines="none" class="ion-item">
+        <fieldset class="input-item">
+          <legend>Contraseña</legend>
+          <ion-input formControlName="password" type="password" placeholder="********" #password></ion-input>
+        </fieldset>
+      </ion-item>
+      <div *ngIf="formularioR.get('password')?.hasError('required') && formularioR.get('password')?.touched"
+        style="color: red;">
+        La contraseña es obligatoria.
+      </div>
+      <div *ngIf="formularioR.get('password')?.hasError('minlength') && formularioR.get('password')?.touched"
+        style="color: red;">
+        La contraseña debe tener al menos 8 caracteres.
+      </div>
+      <div *ngIf="formularioR.get('password')?.hasError('noLetter') && formularioR.get('password')?.touched"
+        style="color: red;">
+        La contraseña debe contener al menos una letra.
+      </div>
+      <div *ngIf="formularioR.get('password')?.hasError('noNumber') && formularioR.get('password')?.touched"
+        style="color: red;">
+        La contraseña debe contener al menos un número.
+      </div>
+      <div *ngIf="formularioR.get('password')?.hasError('noSpecialCharacter') && formularioR.get('password')?.touched"
+        style="color: red;">
+        La contraseña debe contener al menos un carácter especial.
+      </div>
+      <ion-item lines="none" class="ion-item">
+        <fieldset class="input-item">
+          <legend>Repita la contraseña</legend>
+          <ion-input formControlName="confirmPassword" type="password" placeholder="********"></ion-input>
+        </fieldset>
+      </ion-item>
+      <div
+        *ngIf="formularioR.get('confirmPassword')?.hasError('required') && formularioR.get('confirmPassword')?.touched"
+        style="color: red;">
+        La contraseña es obligatoria.
+      </div>
+      <div
+        *ngIf="formularioR.get('confirmPassword')?.hasError('passwordsNotMatch') && formularioR.get('confirmPassword')?.touched"
+        style="color: red;">
+        Las contraseñas no coinciden.
+      </div>
+
+      <p class="signup-text">Ya soy miembro&nbsp;<a (click)="login()">¿Quieres iniciar sesión?</a></p>
+      <ion-button (click)="signUp(email.value?.toString() || '', password.value?.toString() || '')" type="submit"
+        [disabled]="!formularioR.valid" expand="block" color="success">Aceptar</ion-button>
+     
+    </form>
+  </div>
+</ion-content>
